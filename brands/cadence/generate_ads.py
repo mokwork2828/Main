@@ -28,7 +28,7 @@ GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY", "")
 if not GOOGLE_API_KEY:
     sys.exit("GOOGLE_API_KEY environment variable not set. Run: export GOOGLE_API_KEY='your-key'")
 
-IMAGEN_MODEL = "imagen-3.0-generate-002"
+IMAGEN_MODEL = "imagen-4.0-generate-001"
 BASE_URL     = f"https://generativelanguage.googleapis.com/v1beta/models/{IMAGEN_MODEL}:predict"
 HEADERS      = {"Content-Type": "application/json", "x-goog-api-key": GOOGLE_API_KEY}
 
@@ -66,8 +66,7 @@ def generate_images(prompt_data: dict) -> list[bytes]:
             "sampleCount":   NUM_IMAGES,
             "aspectRatio":   aspect_ratio,
             "outputOptions": {"mimeType": "image/png"},
-            "addWatermark":  False,
-            "safetySetting": "block_only_high",
+            "safetySetting": "block_low_and_above",
         },
     }
 
