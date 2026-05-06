@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unlimited Ads — Setup Guide</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #f9f9f7;
+      color: #1a1a1a;
+      line-height: 1.65;
+    }
+
+    .page {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 80px 40px 120px;
+    }
+
+    /* Hero */
+    .label {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #bbb;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: 38px;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      color: #111;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .subtitle {
+      font-size: 16px;
+      color: #777;
+      margin-bottom: 64px;
+      max-width: 480px;
+    }
+
+    /* Sections */
+    .section {
+      margin-bottom: 64px;
+    }
+
+    h2 {
+      font-size: 22px;
+      font-weight: 650;
+      color: #111;
+      letter-spacing: -0.015em;
+      margin-bottom: 6px;
+    }
+
+    .section-sub {
+      font-size: 14px;
+      color: #999;
+      margin-bottom: 28px;
+    }
+
+    h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: #222;
+      margin: 28px 0 8px;
+    }
+
+    p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 12px;
+      line-height: 1.7;
+    }
+
+    /* Numbered steps */
+    ol.steps {
+      list-style: none;
+      counter-reset: steps;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    ol.steps li {
+      counter-increment: steps;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    ol.steps li::before {
+      content: counter(steps);
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: #111;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    ol.steps li .step-content {
+      flex: 1;
+    }
+
+    ol.steps li .step-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: #111;
+      margin-bottom: 6px;
+    }
+
+    ol.steps li p {
+      margin-bottom: 8px;
+    }
+
+    /* Bullet list */
+    ul.bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin: 10px 0;
+    }
+
+    ul.bullets li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: 14px;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    ul.bullets li::before {
+      content: "–";
+      color: #bbb;
+      flex-shrink: 0;
+      margin-top: 0;
+    }
+
+    /* Code blocks */
+    .cmd {
+      background: #fff;
+      border: 1px solid #e4e4e0;
+      border-radius: 8px;
+      padding: 11px 16px;
+      margin: 10px 0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .cmd code {
+      font-family: 'SF Mono', 'Menlo', 'Monaco', monospace;
+      font-size: 13px;
+      color: #111;
+      flex: 1;
+    }
+
+    .copy-btn {
+      background: #f3f3f1;
+      border: 1px solid #e0e0dc;
+      color: #888;
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.15s;
+      white-space: nowrap;
+      font-family: inherit;
+    }
+
+    .copy-btn:hover { background: #ebebea; color: #444; }
+    .copy-btn.copied { color: #16a34a; border-color: #bbf7d0; background: #f0fdf4; }
+
+    code {
+      font-family: 'SF Mono', 'Menlo', monospace;
+      font-size: 12px;
+      background: #f3f3f1;
+      border: 1px solid #e4e4e0;
+      padding: 1px 6px;
+      border-radius: 4px;
+      color: #333;
+    }
+
+    /* Callout */
+    .callout {
+      background: #eff6ff;
+      border: 1px solid #dbeafe;
+      border-left: 3px solid #3b82f6;
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin: 12px 0;
+      font-size: 13px;
+      color: #3b5fa0;
+      line-height: 1.65;
+    }
+
+    .callout strong { color: #1e40af; }
+
+    .warn {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-left: 3px solid #f59e0b;
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin: 12px 0;
+      font-size: 13px;
+      color: #92400e;
+      line-height: 1.65;
+    }
+
+    /* Skills table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 14px;
+    }
+
+    th {
+      text-align: left;
+      padding: 10px 14px;
+      background: #f3f3f1;
+      border: 1px solid #e4e4e0;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #888;
+    }
+
+    td {
+      padding: 12px 14px;
+      border: 1px solid #e8e8e4;
+      color: #444;
+      background: #fff;
+      vertical-align: top;
+      line-height: 1.55;
+    }
+
+    td:first-child {
+      font-family: 'SF Mono', 'Menlo', monospace;
+      font-size: 12px;
+      color: #2563eb;
+      white-space: nowrap;
+    }
+
+    /* Costs */
+    .cost-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid #e8e8e4;
+      font-size: 14px;
+    }
+
+    .cost-row:last-child { border-bottom: none; }
+    .cost-label { color: #444; }
+    .cost-price { font-weight: 600; color: #111; }
+
+    /* Divider */
+    hr {
+      border: none;
+      border-top: 1px solid #e8e8e4;
+      margin: 64px 0;
+    }
+
+    @media (max-width: 600px) {
+      .page { padding: 48px 24px 80px; }
+      h1 { font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <div class="label">Unlimited Ads</div>
+  <h1>Setup Guide</h1>
+  <p class="subtitle">Get running in under 5 minutes. Generate static ads and animated videos for any product, any brand, on demand.</p>
+
+  <hr>
+
+  <!-- ONE-TIME SETUP -->
+  <div class="section">
+    <h2>One-time setup</h2>
+    <p class="section-sub">Do these steps once. Takes about 5 minutes.</p>
+
+    <ol class="steps">
+
+      <li>
+        <div class="step-content">
+          <div class="step-title">Download Claude Code</div>
+          <p>Go to <strong>claude.ai/code</strong> and download the app. You need an Anthropic account — free to sign up.</p>
+        </div>
+      </li>
+
+      <li>
+        <div class="step-content">
+          <div class="step-title">Open the Unlimited Ads folder in Claude Code</div>
+          <p>Open Claude Code → click <strong>Open Folder</strong> → select the <strong>Unlimited Ads</strong> folder you downloaded. You should see <code>CLAUDE.md</code>, <code>scripts/</code>, and <code>workspace/</code> in the sidebar.</p>
+        </div>
+      </li>
+
+      <li>
+        <div class="step-content">
+          <div class="step-title">Get a FAL API key</div>
+          <p>Go to <strong>fal.ai</strong> → sign up → click your avatar → <strong>API Keys</strong> → create a new key and copy it.</p>
+          <p>Open the <code>.env</code> file in the Unlimited Ads folder and replace the placeholder with your key:</p>
+          <div class="cmd"><code>FAL_KEY=your-actual-key-here</code></div>
+          <div class="callout"><strong>Can't see .env?</strong> It starts with a dot, which hides it on Mac. Press <strong>Cmd + Shift + .</strong> in Finder to show hidden files. In Claude Code it's always visible in the sidebar.</div>
+        </div>
+      </li>
+
+      <li>
+        <div class="step-content">
+          <div class="step-title">Install Python packages</div>
+          <p>Open the terminal in Claude Code and run this command. You only need to do this once.</p>
+          <div class="cmd">
+            <code>pip3 install fal-client requests</code>
+            <button class="copy-btn" onclick="copyCode(this, 'pip3 install fal-client requests')">Copy</button>
+          </div>
+          <div class="warn">If you see "pip3 not found", try <code>pip install fal-client requests</code> without the 3.</div>
+        </div>
+      </li>
+
+    </ol>
+  </div>
+
+  <hr>
+
+  <!-- THE THREE SKILLS -->
+  <div class="section">
+    <h2>The three skills</h2>
+    <p class="section-sub">Three commands. Run them in this order the first time.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Command</th>
+          <th>What it does</th>
+          <th>When to run</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>/brand-dna-builder</td>
+          <td>Researches your brand from its URL — colors, photography style, visual rules. Saves a visual brief and creates your folder structure.</td>
+          <td>Once per brand</td>
+        </tr>
+        <tr>
+          <td>/ad-generator</td>
+          <td>Analyzes your reference images, researches the product, writes a creative brief for approval, then generates one ad per reference.</td>
+          <td>Every time you want ads</td>
+        </tr>
+        <tr>
+          <td>/ad-animator</td>
+          <td>Reads a generated ad, identifies what can naturally move in the scene, writes a motion brief for approval, then animates it via Kling 3.0.</td>
+          <td>After /ad-generator, for video</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <hr>
+
+  <!-- CREATING ADS -->
+  <div class="section">
+    <h2>Creating ads</h2>
+    <p class="section-sub">Follow these steps every time you start with a new brand.</p>
+
+    <ol class="steps">
+
+      <li>
+        <div class="step-content">
+          <div class="step-title">Run /brand-dna-builder</div>
+          <p>Type in the Claude Code chat:</p>
+          <div class="cmd">
+            <code>/brand-dna-builder</code>
+            <button class="copy-btn" onclick="copyCode(this, '/brand-dna-builder')">Copy</button>
+          </div>
+          <p>Claude will ask for your brand's website URL. Paste it in. It researches the brand's visual identity — colors, photography style, voice — and saves everything to a <code>visual-brief.md</code>. It also creates your <code>product-images/</code> and <code>references/</code> folders.</p>
+        </div>
+      </li>
+
+      <li>
+        <div class="step-content">
+          <div class="step-title">Drop in your product image</div>
+          <p>Add your product photo to:</p>
+          <div class="cmd"><code>workspace/brands/[your-brand]/product-images/</code></div>
+          <ul class="bullets">
+            <li>One clean, front-facing shot is enough</li>
+            <li>Name it clearly with lowercase and hyphens: <code>face-serum.jpg</code></li>
+            <li>Plain or white background works best</li>
+          </ul>
+        </div>
+      </li>
+
+      <li>
+        <div class="step-content">
+          <div class="step-title">Add reference images</div>
+          <p>Drop reference images into:</p>
+          <div class="cmd"><code>workspace/brands/[your-brand]/references/</code></div>
+          <ul class="bullets">
+            <li>Pinterest screenshots, competitor ads, editorial shots — anything showing the visual direction you want</li>
+            <li><strong>Each reference becomes one ad.</strong> 4 references → 4 ads. 10 references → 10 ads.</li>
+            <li>4–8 well-chosen images is the sweet spot</li>
+          </ul>
+        </div>
+      </li>
+
+      <li>
+        <div class="step-content">
+          <div class="step-title">Run /ad-generator</div>
+          <div class="cmd">
+            <code>/ad-generator</code>
+            <button class="copy-btn" onclick="copyCode(this, '/ad-generator')">Copy</button>
+          </div>
+          <ul class="bullets">
+            <li>Analyzes every reference — lighting, color grade, composition, mood</li>
+            <li>Researches the product and pulls real customer language</li>
+            <li>Writes one creative brief per reference and shows them all at once</li>
+            <li>Waits for your approval — read and adjust before saying go</li>
+            <li>Generates all ads in sequence, one per reference</li>
+          </ul>
+          <p style="margin-top:12px;">Output saved to: <code>workspace/brands/[brand]/ads/[product]_[date]/ref-1/</code>, <code>ref-2/</code> ...</p>
+        </div>
+      </li>
+
+      <li>
+        <div class="step-content">
+          <div class="step-title">Run /ad-animator <span style="font-weight:400;color:#999;font-size:13px;">(optional — for video)</span></div>
+          <div class="cmd">
+            <code>/ad-animator</code>
+            <button class="copy-btn" onclick="copyCode(this, '/ad-animator')">Copy</button>
+          </div>
+          <ul class="bullets">
+            <li>Claude reads the generated image and identifies what can naturally move — steam, liquid, light shifting, a subtle eye blink</li>
+            <li>Writes a motion brief and waits for your approval before generating</li>
+            <li>Outputs a 5-second MP4 saved next to the static ad</li>
+            <li>Camera and text always stay locked — only natural scene elements move</li>
+          </ul>
+        </div>
+      </li>
+
+    </ol>
+  </div>
+
+  <hr>
+
+  <!-- RUNNING MORE ADS -->
+  <div class="section">
+    <h2>Running more ads</h2>
+    <p class="section-sub">After the first brand is set up, new ads take about 3 minutes.</p>
+
+    <h3>Same brand, new product</h3>
+    <p>Drop a new product image into <code>product-images/</code> and run <code>/ad-generator</code>. If there are multiple images Claude will ask which one to use.</p>
+
+    <h3>Different visual direction</h3>
+    <p>Clear the <code>references/</code> folder, drop in new reference images, and run <code>/ad-generator</code>. Brand DNA stays the same — only the creative direction changes.</p>
+
+    <h3>New brand</h3>
+    <p>Run <code>/brand-dna-builder</code> with a new brand URL. Each brand gets its own folder. Manage as many brands as you want.</p>
+
+    <h3>Adjust and regenerate</h3>
+    <p>If you don't love an output, tell Claude what to change — the headline, the composition, the background color. Claude updates the brief and regenerates. Each static ad costs ~$0.12 so iteration is cheap.</p>
+  </div>
+
+  <hr>
+
+  <!-- COSTS -->
+  <div class="section">
+    <h2>Generation costs</h2>
+    <p class="section-sub">Pay-per-generation via FAL. No subscription. Add credits as needed.</p>
+
+    <div class="cost-row">
+      <span class="cost-label">Static ad — GPT Image 2.0 (high quality)</span>
+      <span class="cost-price">~$0.12</span>
+    </div>
+    <div class="cost-row">
+      <span class="cost-label">Animated video — Kling 3.0 Pro (5 sec)</span>
+      <span class="cost-price">~$0.35</span>
+    </div>
+    <div class="cost-row">
+      <span class="cost-label">Brand DNA build — web research only</span>
+      <span class="cost-price">Free</span>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- TROUBLESHOOTING -->
+  <div class="section">
+    <h2>Troubleshooting</h2>
+
+    <h3>"FAL_KEY not found"</h3>
+    <p>Open <code>.env</code> and confirm your key is there with no spaces: <code>FAL_KEY=your-actual-key</code>. The file must be in the root of the Unlimited Ads folder.</p>
+
+    <h3>"No brand found" when running /ad-generator</h3>
+    <p>Run <code>/brand-dna-builder</code> first. It creates the <code>visual-brief.md</code> that /ad-generator looks for. Check that the file exists at <code>workspace/brands/[brand]/visual-brief.md</code>.</p>
+
+    <h3>"No reference images found"</h3>
+    <p>Drop images into <code>workspace/brands/[brand]/references/</code> before running /ad-generator. References are required — each one becomes one ad.</p>
+
+    <h3>Generation fails with a server error</h3>
+    <p>FAL occasionally has brief outages. Wait 30 seconds and try again. If it keeps failing, check your FAL dashboard to confirm your key is active and has credit.</p>
+
+    <h3>Product packaging looks wrong in the output</h3>
+    <p>Make sure your product image is front-facing, well-lit, and the label is clearly readable. A plain or white background gives the model the best reference.</p>
+
+    <h3>Animation looks too dramatic</h3>
+    <p>Run <code>/ad-animator</code> again and tell Claude to tone it down — "less movement on the steam" or "only animate the light shift." The motion brief is editable before generation.</p>
+  </div>
+
+</div>
+
+<script>
+  function copyCode(btn, text) {
+    navigator.clipboard.writeText(text).then(() => {
+      btn.textContent = 'Copied';
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.textContent = 'Copy';
+        btn.classList.remove('copied');
+      }, 1800);
+    });
+  }
+</script>
+
+</body>
+</html>
