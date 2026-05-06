@@ -24,7 +24,7 @@ except ImportError:
 
 # ── Config ────────────────────────────────────────────────────────────────────
 
-GOOGLE_API_KEY = os.environ.get("AIzaSyAsDjSddiiV8GpvuuKiI5EidXZESEHi9dA", "")
+GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY", "")
 if not GOOGLE_API_KEY:
     sys.exit("GOOGLE_API_KEY environment variable not set. Run: export GOOGLE_API_KEY='your-key'")
 
