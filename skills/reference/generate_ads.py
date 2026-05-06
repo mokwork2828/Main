@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """
-generate_ads.py — Ad Image Generator (Google AI Studio / Imagen 4)
-Reads prompts.json, fires each prompt to Imagen 4 via the Google AI Studio API,
-decodes the base64 responses, saves images, and builds an HTML gallery.
+generate_ads.py — Ad Image Generator (Google AI Studio)
+Reads prompts.json and generates ads via two models:
+  - needs_product_images: true  → gemini-2.5-flash-image (accepts reference photo)
+  - needs_product_images: false → imagen-4.0-generate-001 (text-to-image)
 
 Usage:
     python generate_ads.py --brand-dir brands/my-brand
@@ -28,17 +29,21 @@ GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY", "")
 if not GOOGLE_API_KEY:
     sys.exit("GOOGLE_API_KEY environment variable not set. Run: export GOOGLE_API_KEY='your-key'")
 
+# Product-reference model (accepts image input + generates image output)
+GEMINI_IMAGE_MODEL = "gemini-2.5-flash-image"
+GEMINI_URL = f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_IMAGE_MODEL}:generateContent"
+
+# Text-to-image model (no image input)
 IMAGEN_MODEL = "imagen-4.0-generate-001"
-BASE_URL     = f"https://generativelanguage.googleapis.com/v1beta/models/{IMAGEN_MODEL}:predict"
-HEADERS      = {"Content-Type": "application/json", "x-goog-api-key": GOOGLE_API_KEY}
+IMAGEN_URL   = f"https://generativelanguage.googleapis.com/v1beta/models/{IMAGEN_MODEL}:predict"
 
-NUM_IMAGES   = 4     # Imagen 4 supports up to 4 per request
+HEADERS = {"Content-Type": "application/json", "x-goog-api-key": GOOGLE_API_KEY}
 
-# Imagen 4 supported aspect ratios: 1:1, 3:4, 4:3, 9:16, 16:9
-# Map any unsupported ratios to the nearest equivalent
+NUM_IMAGES = 4
+
 ASPECT_RATIO_MAP = {
     "1:1":  "1:1",
-    "4:5":  "3:4",   # nearest supported to 4:5
+    "4:5":  "3:4",
     "3:4":  "3:4",
     "2:3":  "3:4",
     "4:3":  "4:3",
@@ -48,20 +53,62 @@ ASPECT_RATIO_MAP = {
     "21:9": "16:9",
 }
 
+SUPPORTED_IMAGE_EXTS = {".jpg", ".jpeg", ".png", ".webp"}
 
-# ── Image Generation ──────────────────────────────────────────────────────────
 
-def generate_images(prompt_data: dict) -> list[bytes]:
-    """Call Imagen 4 and return a list of raw PNG bytes."""
-    raw_ratio    = prompt_data.get("aspect_ratio", "1:1")
-    aspect_ratio = ASPECT_RATIO_MAP.get(raw_ratio, "1:1")
-    if aspect_ratio != raw_ratio:
-        print(f"  Aspect ratio {raw_ratio} → mapped to {aspect_ratio} (nearest Imagen 4 support)")
+# ── Product Image Loading ─────────────────────────────────────────────────────
 
+def load_product_images(brand_dir: Path) -> list[dict]:
+    """Load product images from product-images/ as base64 dicts."""
+    img_dir = brand_dir / "product-images"
+    if not img_dir.exists():
+        return []
+    images = []
+    for f in sorted(img_dir.iterdir()):
+        if f.suffix.lower() not in SUPPORTED_IMAGE_EXTS:
+            continue
+        mime = "image/jpeg" if f.suffix.lower() in {".jpg", ".jpeg"} else f"image/{f.suffix[1:].lower()}"
+        encoded = base64.b64encode(f.read_bytes()).decode("utf-8")
+        images.append({"mime_type": mime, "data": encoded, "name": f.name})
+    return images
+
+
+# ── Generation: Gemini (product reference) ───────────────────────────────────
+
+def generate_with_gemini(prompt: str, product_images: list[dict]) -> list[bytes]:
+    """Generate NUM_IMAGES images using gemini-2.5-flash-image with product reference."""
+    ref = product_images[0]
+    results = []
+    for _ in range(NUM_IMAGES):
+        payload = {
+            "contents": [{
+                "parts": [
+                    {"text": prompt},
+                    {"inline_data": {"mime_type": ref["mime_type"], "data": ref["data"]}},
+                ]
+            }],
+            "generationConfig": {
+                "responseModalities": ["IMAGE", "TEXT"],
+            },
+        }
+        resp = requests.post(GEMINI_URL, headers=HEADERS, json=payload, timeout=180)
+        resp.raise_for_status()
+        parts = resp.json().get("candidates", [{}])[0].get("content", {}).get("parts", [])
+        for p in parts:
+            if "inlineData" in p:
+                results.append(base64.b64decode(p["inlineData"]["data"]))
+                break
+        if len(results) == NUM_IMAGES:
+            break
+    return results
+
+
+# ── Generation: Imagen 4 (text-only) ─────────────────────────────────────────
+
+def generate_with_imagen(prompt: str, aspect_ratio: str) -> list[bytes]:
+    """Generate NUM_IMAGES images using Imagen 4 text-to-image."""
     payload = {
-        "instances": [
-            {"prompt": prompt_data["prompt"]}
-        ],
+        "instances": [{"prompt": prompt}],
         "parameters": {
             "sampleCount":   NUM_IMAGES,
             "aspectRatio":   aspect_ratio,
@@ -69,8 +116,7 @@ def generate_images(prompt_data: dict) -> list[bytes]:
             "safetySetting": "block_low_and_above",
         },
     }
-
-    resp = requests.post(BASE_URL, headers=HEADERS, json=payload, timeout=120)
+    resp = requests.post(IMAGEN_URL, headers=HEADERS, json=payload, timeout=120)
     resp.raise_for_status()
     predictions = resp.json().get("predictions", [])
     if not predictions:
@@ -78,24 +124,38 @@ def generate_images(prompt_data: dict) -> list[bytes]:
     return [base64.b64decode(p["bytesBase64Encoded"]) for p in predictions]
 
 
+# ── Dispatch ──────────────────────────────────────────────────────────────────
+
+def generate_images(prompt_data: dict, product_images: list[dict]) -> list[bytes]:
+    raw_ratio    = prompt_data.get("aspect_ratio", "1:1")
+    aspect_ratio = ASPECT_RATIO_MAP.get(raw_ratio, "1:1")
+    if aspect_ratio != raw_ratio:
+        print(f"  Aspect ratio {raw_ratio} → mapped to {aspect_ratio}")
+
+    use_ref = prompt_data.get("needs_product_images", False) and product_images
+
+    if use_ref:
+        print(f"  Model: {GEMINI_IMAGE_MODEL} (product reference: {product_images[0]['name']})")
+        return generate_with_gemini(prompt_data["prompt"], product_images)
+    else:
+        print(f"  Model: {IMAGEN_MODEL} (text-to-image)")
+        return generate_with_imagen(prompt_data["prompt"], aspect_ratio)
+
+
 # ── Save ──────────────────────────────────────────────────────────────────────
 
 def save_prompt_results(prompt_data: dict, images: list[bytes], outputs_dir: Path) -> list[Path]:
-    """Save all images + prompt.txt for a single prompt."""
     num    = str(prompt_data["template_number"]).zfill(2)
     name   = prompt_data["template_name"].lower().replace(" ", "-")
     folder = outputs_dir / f"{num}-{name}"
     folder.mkdir(parents=True, exist_ok=True)
-
     (folder / "prompt.txt").write_text(prompt_data["prompt"], encoding="utf-8")
-
     saved = []
     for i, img_bytes in enumerate(images, start=1):
         dest = folder / f"{name}_v{i}.png"
         dest.write_bytes(img_bytes)
         print(f"  Saved image {i}/{len(images)} → {dest.name}")
         saved.append(dest)
-
     return saved
 
 
@@ -128,17 +188,14 @@ HTML_TEMPLATE = """\
 """
 
 def build_gallery(brand: str, generated_at: str, outputs_dir: Path) -> None:
-    """Walk outputs/ and build index.html gallery."""
     sections     = []
     total_images = 0
-
     for folder in sorted(outputs_dir.iterdir()):
         if not folder.is_dir():
             continue
         imgs = sorted(folder.glob("*.png")) + sorted(folder.glob("*.jpg"))
         if not imgs:
             continue
-
         total_images += len(imgs)
         cards = "\n".join(
             f'<div class="card"><img src="{img.relative_to(outputs_dir.parent)}" loading="lazy"><span>{img.name}</span></div>'
@@ -148,7 +205,6 @@ def build_gallery(brand: str, generated_at: str, outputs_dir: Path) -> None:
             f'<div class="template"><h2>{folder.name}</h2>'
             f'<div class="grid">{cards}</div></div>'
         )
-
     html = HTML_TEMPLATE.format(
         brand=brand,
         generated_at=generated_at,
@@ -156,7 +212,6 @@ def build_gallery(brand: str, generated_at: str, outputs_dir: Path) -> None:
         total_templates=len(sections),
         sections="\n".join(sections),
     )
-
     gallery_path = outputs_dir.parent / "index.html"
     gallery_path.write_text(html, encoding="utf-8")
     print(f"\nGallery saved → {gallery_path}")
@@ -165,9 +220,9 @@ def build_gallery(brand: str, generated_at: str, outputs_dir: Path) -> None:
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 def main():
-    parser = argparse.ArgumentParser(description="Generate ads via Google AI Studio / Imagen 4")
-    parser.add_argument("--templates", help="Comma-separated template numbers to run, e.g. 1,7,13")
-    parser.add_argument("--brand-dir", help="Path to brand folder (default: current directory)", default=".")
+    parser = argparse.ArgumentParser(description="Generate ads via Google AI Studio")
+    parser.add_argument("--templates", help="Comma-separated template numbers, e.g. 1,7,13")
+    parser.add_argument("--brand-dir", default=".", help="Path to brand folder")
     args = parser.parse_args()
 
     brand_dir    = Path(args.brand_dir).resolve()
@@ -183,6 +238,12 @@ def main():
     brand        = data.get("brand", "Unknown Brand")
     generated_at = data.get("generated_at", "")
     prompts      = data.get("prompts", [])
+
+    product_images = load_product_images(brand_dir)
+    if product_images:
+        print(f"Loaded {len(product_images)} product image(s) from product-images/")
+    else:
+        print("No product images found — text-to-image for all templates")
 
     if args.templates:
         selected = {int(t.strip()) for t in args.templates.split(",")}
@@ -201,10 +262,9 @@ def main():
         num  = prompt_data["template_number"]
         name = prompt_data["template_name"]
         print(f"\n── [{idx}/{total}] Template {num}: {name} ──────────────────────────────")
-        print(f"  Model: {IMAGEN_MODEL}")
 
         try:
-            images = generate_images(prompt_data)
+            images = generate_images(prompt_data, product_images)
             saved  = save_prompt_results(prompt_data, images, outputs_dir)
             all_saved.extend(saved)
             print(f"  ✓ {len(saved)} image(s) saved")
