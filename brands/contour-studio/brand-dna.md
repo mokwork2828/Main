@@ -3,7 +3,7 @@ BRAND DNA DOCUMENT
 
 ## BRAND OVERVIEW
 
-**Name:** SKIMS
+**Name:** Contour Studio
 **Tagline:** "Solutionwear for every body"
 **Full Positioning Statement:** Solutions for Every Body — inclusivity as a product principle from day one, not a marketing afterthought.
 **Design Agency:** King & Partners (comprehensive brand refresh, visual system, site redesign)
@@ -19,13 +19,13 @@ BRAND DNA DOCUMENT
 4. Modern — culturally fluent, not trend-chasing
 5. Luxurious — premium without being cold or inaccessible
 
-**Positioning:** SKIMS redefined the shapewear and loungewear category by making radical inclusivity the starting point of product design. The brand operates at the intersection of celebrity culture and premium minimalism — orchestrating cultural moments rather than running traditional advertising. Products range from XXS to 5XL across nine skin-tone shades. In 2025, SKIMS also acquired SKKN by Kim and launched the NikeSKIMS performance collaboration.
+**Positioning:** Contour Studio redefined the shapewear and loungewear category by making radical inclusivity the starting point of product design. The brand operates at the intersection of celebrity culture and premium minimalism — orchestrating cultural moments rather than running traditional advertising. Products range from XXS to 5XL across nine skin-tone shades. In 2025, Contour Studio also acquired SKKN by Kim and launched the NikeContour Studio performance collaboration.
 
 **Competitive Differentiation:**
-- vs. Savage X Fenty: SKIMS is minimalist and understated (designed to disappear under clothes); Fenty is maximalist and expressive (designed to be seen)
-- vs. Spanx: SKIMS is soft, loungewear-like, lifestyle-forward; Spanx is firm compression and performance-targeted
-- vs. Victoria's Secret: SKIMS centers inclusion and real bodies; VS historically pushed a singular beauty ideal
-- Unique advantage: Custom proprietary bubble wordmark, 9+ skin tone shade ranges, XXS–5XL sizing, NikeSKIMS collaboration, $5B+ cultural brand status
+- vs. Savage X Fenty: Contour Studio is minimalist and understated (designed to disappear under clothes); Fenty is maximalist and expressive (designed to be seen)
+- vs. Spanx: Contour Studio is soft, loungewear-like, lifestyle-forward; Spanx is firm compression and performance-targeted
+- vs. Victoria's Secret: Contour Studio centers inclusion and real bodies; VS historically pushed a singular beauty ideal
+- Unique advantage: Custom proprietary bubble wordmark, 9+ skin tone shade ranges, XXS–5XL sizing, NikeContour Studio collaboration, $5B+ cultural brand status
 
 ---
 
@@ -64,7 +64,7 @@ BRAND DNA DOCUMENT
 
 **Subject Matter:** Diverse models across age, ethnicity, body shape, and size. Celebrity talent (Hailey Bieber, Cardi B, Sabrina Carpenter, Tate McRae, Jennifer Lopez, Lana Del Rey, Kate Moss) alongside non-celebrity diverse talent. The product is always the hero — worn naturally, not styled aggressively. Close-up shots of fabric texture, waistbands, and seam details are common.
 
-**Props and Surfaces:** Minimal. Clean studio backgrounds in white, cream, or soft neutral tones. Occasional lifestyle/environmental sets for campaign work (vintage pin-up sets, winter-themed sets, athletic environments for NikeSKIMS). Day-to-day product photography is studio-only, clean surface, no distractions.
+**Props and Surfaces:** Minimal. Clean studio backgrounds in white, cream, or soft neutral tones. Occasional lifestyle/environmental sets for campaign work (vintage pin-up sets, winter-themed sets, athletic environments for NikeContour Studio). Day-to-day product photography is studio-only, clean surface, no distractions.
 
 **Mood:** Comfortable confidence. Quiet luxury. Warmth without softness. The visual feeling of something premium that also actually solves a problem. Aspirational without being alienating. Body-positive without being performative.
 
@@ -72,16 +72,16 @@ BRAND DNA DOCUMENT
 
 ---
 
-## PRODUCT DETAILS (SKIMS Shapewear Reference)
+## PRODUCT DETAILS (Contour Studio Shapewear Reference)
 
-**Core Categories:** Shapewear, Underwear, Loungewear, Swimwear, Adaptive collection, NikeSKIMS performance line
+**Core Categories:** Shapewear, Underwear, Loungewear, Swimwear, Adaptive collection, NikeContour Studio performance line
 
-**Material Philosophy:** Proprietary, skin-tone-matched fabrications. Soft, stretch, form-fitting. Premium hand-feel. SKIMS fabrics are designed to feel like a second skin — the packaging and visual system reflect this through softness in every touchpoint. Seamless construction, flat profiles, zero bulk under clothing.
+**Material Philosophy:** Proprietary, skin-tone-matched fabrications. Soft, stretch, form-fitting. Premium hand-feel. Contour Studio fabrics are designed to feel like a second skin — the packaging and visual system reflect this through softness in every touchpoint. Seamless construction, flat profiles, zero bulk under clothing.
 
 **Shapewear Specifics:** The waist trainer / sculpting pieces feature smooth, seamless fabric in warm ivory/cream and skin-matching neutral tones. Adjustable closures. Flat profile designed to be invisible under clothing. Breathable, all-day wearability is the core functional claim.
 
 **Packaging System:**
-- Matte-finish boxes with embossed SKIMS logo
+- Matte-finish boxes with embossed Contour Studio logo
 - Custom-fit foam inserts with neatly folded garments
 - Soft-touch bags and magnetic closure boxes for premium tiers
 - Premium tissue paper in signature neutral brand colors
@@ -105,12 +105,12 @@ BRAND DNA DOCUMENT
 
 **Photo vs. Illustration:** Photography only. No illustration. High-production studio photography and campaign imagery dominate. UGC content is whitelisted and amplified for paid social.
 
-**UGC Usage:** Central to strategy. SKIMS actively recruits, whitelist-amplifies, and partners with micro and macro influencers. The brand blurs the line between organic and paid — UGC content runs as paid ads and feels native to the feed. Before/after, try-on, and review formats perform strongly.
+**UGC Usage:** Central to strategy. Contour Studio actively recruits, whitelist-amplifies, and partners with micro and macro influencers. The brand blurs the line between organic and paid — UGC content runs as paid ads and feels native to the feed. Before/after, try-on, and review formats perform strongly.
 
 **Offer Presentation:** Drop-style urgency ("Selling fast," "Limited edition") rather than discount-driven promotion. Rarely leads with price cuts. Scarcity and cultural relevance are the conversion levers. When promotions run, they're framed as benefits ("Free shipping") not discounts.
 
 **3 Core Ad Storylines:**
-1. Comfort as Confidence — how SKIMS makes you feel secure and capable in your own body
+1. Comfort as Confidence — how Contour Studio makes you feel secure and capable in your own body
 2. Representation as Design — diverse bodies are the design brief, not the tagline
 3. Simplicity as Luxury — minimalism and restraint as premium signals; designed to disappear
 
@@ -118,9 +118,9 @@ BRAND DNA DOCUMENT
 
 ## IMAGE GENERATION PROMPT MODIFIER
 
-*Prepend this paragraph to any image prompt to match SKIMS's visual identity:*
+*Prepend this paragraph to any image prompt to match Contour Studio's visual identity:*
 
-SKIMS brand aesthetic: premium minimalist shapewear and loungewear brand. Warm taupe (#62554a) and soft neutral palette (#e4c9af, #efdfd0, cream whites). Custom rounded bubble-style wordmark for any logo elements; T-Star Pro-style clean technical sans-serif for body copy. Warm, flattering studio lighting, natural-yet-polished color grade, generous negative space. Diverse, inclusive, body-positive casting. Quiet luxury energy — confident, understated, never loud. Packaging in matte neutral tones with embossed logo detailing.
+Contour Studio brand aesthetic: premium minimalist shapewear and loungewear brand. Warm taupe (#62554a) and soft neutral palette (#e4c9af, #efdfd0, cream whites). Custom rounded bubble-style wordmark for any logo elements; T-Star Pro-style clean technical sans-serif for body copy. Warm, flattering studio lighting, natural-yet-polished color grade, generous negative space. Diverse, inclusive, body-positive casting. Quiet luxury energy — confident, understated, never loud. Packaging in matte neutral tones with embossed logo detailing.
 
 ---
 
