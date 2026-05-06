@@ -1,0 +1,87 @@
+{
+  "brand": "SKIMS",
+  "product": "Ivory Waist Trainer",
+  "generated_at": "2026-05-06T00:00:00Z",
+  "prompts": [
+    {
+      "template_number": 1,
+      "template_name": "headline",
+      "prompt": "SKIMS brand aesthetic: premium minimalist shapewear and loungewear brand. Warm taupe (#62554a) and soft neutral palette (#e4c9af, #efdfd0, cream whites). Custom rounded bubble-style wordmark for any logo elements; T-Star Pro-style clean technical sans-serif for body copy. Warm, flattering studio lighting, natural-yet-polished color grade, generous negative space. Diverse, inclusive, body-positive casting. Quiet luxury energy — confident, understated, never loud. Packaging in matte neutral tones with embossed logo detailing. Use the attached images as brand reference. Match the exact product colors, typography style, and brand tone precisely. Create: a static ad with a soft cream (#efdfd0) background. Top third: large bold rounded bubble-style uppercase headline reading \"Your waist. Reclaimed.\" Below in smaller T-Star Pro-style clean sans-serif text: \"Breathable, invisible, all-day — the waist trainer that actually works.\" Bottom half: ivory waist trainer — a smooth, form-fitting shapewear band in warm ivory/cream tone with adjustable hook-and-eye closure and flat seamless profile — laid on a clean white marble surface with soft natural sidelighting. Shot at 50mm f/2.8 from slightly above. SKIMS logo bottom right in warm taupe. Clean, confident. 4:5 aspect ratio.",
+      "aspect_ratio": "4:5",
+      "needs_product_images": true,
+      "notes": "Headline uses period for authority. Ivory product on cream background creates a tonal, luxurious composition — the SKIMS signature monochromatic approach."
+    },
+    {
+      "template_number": 2,
+      "template_name": "offer-promotion",
+      "prompt": "SKIMS brand aesthetic: premium minimalist shapewear and loungewear brand. Warm taupe (#62554a) and soft neutral palette (#e4c9af, #efdfd0, cream whites). Custom rounded bubble-style wordmark for any logo elements; T-Star Pro-style clean technical sans-serif for body copy. Warm, flattering studio lighting, natural-yet-polished color grade, generous negative space. Diverse, inclusive, body-positive casting. Quiet luxury energy — confident, understated, never loud. Packaging in matte neutral tones with embossed logo detailing. Use the attached images as brand reference. Match exact brand colors and typography style. Create: a promotional ad with a split background — top 60% warm taupe (#62554a) and bottom 40% soft cream white (#efdfd0). The ivory waist trainer — smooth, seamless, adjustable shapewear band in warm ivory/cream tone — sits centered precisely where the two colors meet, soft studio lighting, slight shadow beneath. Upper area: large white rounded bubble-style uppercase heading \"FREE SHIPPING ON YOUR FIRST ORDER\". Below in smaller white T-Star Pro-style text: \"Breathable. Invisible. All-day comfort.\" Lower cream section: small taupe sans-serif listing \"Adjustable fit  ·  Discreet under clothing  ·  Gives you back your waistline\" SKIMS logo bottom right in white. 9:16 aspect ratio.",
+      "aspect_ratio": "9:16",
+      "needs_product_images": true,
+      "notes": "Taupe/cream split mirrors SKIMS brand color palette. Offer copy should be updated to reflect live shipping terms before running."
+    },
+    {
+      "template_number": 3,
+      "template_name": "testimonials",
+      "prompt": "SKIMS brand aesthetic: premium minimalist shapewear and loungewear brand. Warm taupe (#62554a) and soft neutral palette (#e4c9af, #efdfd0, cream whites). Custom rounded bubble-style wordmark for any logo elements; T-Star Pro-style clean technical sans-serif for body copy. Warm, flattering studio lighting, natural-yet-polished color grade, generous negative space. Diverse, inclusive, body-positive casting. Quiet luxury energy — confident, understated, never loud. Packaging in matte neutral tones with embossed logo detailing. Use the attached images as brand reference. Create: a testimonial ad set in a bright, airy bedroom with warm natural morning light from a side window. The ivory waist trainer — smooth, seamless shapewear band in warm ivory/cream — rests on clean white linen bedding, slightly out of focus in the foreground. Overlaid in large bold white rounded bubble-style uppercase text: \"I wore it all day. Nobody knew.\" Below in smaller white T-Star Pro-style text: \"I've tried every waist trainer out there. This is the first one I forgot I was wearing. Breathable, invisible under my work clothes, and my posture has never been better. I ordered two more immediately. — Maya T., verified buyer\" Five filled warm taupe stars. SKIMS logo bottom right in white. Shot on 35mm f/2.0. 9:16 aspect ratio.",
+      "aspect_ratio": "9:16",
+      "needs_product_images": true,
+      "notes": "Headline 'I wore it all day. Nobody knew.' sells the invisibility and all-day wear features directly. Replace with a verified real customer quote before final production."
+    },
+    {
+      "template_number": 4,
+      "template_name": "features-benefits-point-out",
+      "prompt": "SKIMS brand aesthetic: premium minimalist shapewear and loungewear brand. Warm taupe (#62554a) and soft neutral palette (#e4c9af, #efdfd0, cream whites). Custom rounded bubble-style wordmark for any logo elements; T-Star Pro-style clean technical sans-serif for body copy. Warm, flattering studio lighting, natural-yet-polished color grade, generous negative space. Diverse, inclusive, body-positive casting. Quiet luxury energy — confident, understated, never loud. Packaging in matte neutral tones with embossed logo detailing. Use the attached images as brand reference. Create: an educational diagram-style ad on a clean white (#FFFFFF) background. Top: bold warm taupe (#62554a) rounded bubble-style uppercase text \"What Makes This Waist Trainer Different\". Below: the ivory waist trainer — smooth seamless shapewear band in warm ivory/cream tone — centered, even soft studio lighting. Four callout boxes connected by thin taupe lines at the four compass points: top-left \"Breathable fabric — wear it all day, no heat build-up\", top-right \"Invisible under clothing — smooth, flat, zero bulk\", bottom-left \"Fully adjustable — fits your body, your way\", bottom-right \"Waist definition — restores your natural silhouette\". Each callout has a small filled warm taupe (#62554a) circle at the line endpoint. T-Star Pro-style clean sans-serif throughout. SKIMS logo bottom right in taupe. Scientific elegance redesigned by a luxury fashion house. 4:5 aspect ratio.",
+      "aspect_ratio": "4:5",
+      "needs_product_images": true,
+      "notes": "Four callouts map directly to the four core product benefits: breathable, invisible, adjustable, waist-defining. Diagram lines should feel minimal and editorial, not clinical."
+    },
+    {
+      "template_number": 5,
+      "template_name": "bullet-points",
+      "prompt": "SKIMS brand aesthetic: premium minimalist shapewear and loungewear brand. Warm taupe (#62554a) and soft neutral palette (#e4c9af, #efdfd0, cream whites). Custom rounded bubble-style wordmark for any logo elements; T-Star Pro-style clean technical sans-serif for body copy. Warm, flattering studio lighting, natural-yet-polished color grade, generous negative space. Diverse, inclusive, body-positive casting. Quiet luxury energy — confident, understated, never loud. Packaging in matte neutral tones with embossed logo detailing. Use the attached images as brand reference. Create: a benefit-list ad, split composition on a clean white (#FFFFFF) background. Left 40%: the ivory waist trainer — smooth seamless adjustable shapewear band in warm ivory/cream — sitting on a pale marble surface, shot at 85mm f/2.8 with soft warm side lighting, shallow depth of field. Right 60%: vertical stack of five benefit lines with filled warm taupe (#62554a) circles as bullet points in clean T-Star Pro-style sans-serif with generous line spacing: \"Breathable all day, zero discomfort\" / \"Invisible under any outfit\" / \"Fully adjustable for your body\" / \"Gives you back your waistline\" / \"Ivory tone — effortlessly discreet\" SKIMS logo bottom right in taupe. 4:5 aspect ratio.",
+      "aspect_ratio": "4:5",
+      "needs_product_images": true,
+      "notes": "The fifth bullet doubles as both a color description and a benefit — ivory tone reads as a feature in the SKIMS inclusive framework."
+    },
+    {
+      "template_number": 6,
+      "template_name": "social-proof",
+      "prompt": "SKIMS brand aesthetic: premium minimalist shapewear and loungewear brand. Warm taupe (#62554a) and soft neutral palette (#e4c9af, #efdfd0, cream whites). Custom rounded bubble-style wordmark for any logo elements; T-Star Pro-style clean technical sans-serif for body copy. Warm, flattering studio lighting, natural-yet-polished color grade, generous negative space. Diverse, inclusive, body-positive casting. Quiet luxury energy — confident, understated, never loud. Packaging in matte neutral tones with embossed logo detailing. Use the attached images as brand reference. Create: a social proof ad on a clean white (#FFFFFF) background. Top: \"Join thousands who got their waistline back.\" in bold warm taupe (#62554a) rounded bubble-style uppercase type. Five filled warm taupe stars with \"Rated 4.9 out of 5\" in small T-Star Pro text beside them. Center: the ivory waist trainer — smooth, seamless, adjustable shapewear band in ivory/cream — shot at 50mm f/4, soft even studio lighting. Below: frosted white card with subtle drop shadow containing five warm taupe stars, review title \"Finally invisible shapewear that actually works.\", review body \"I have been searching for a waist trainer I can actually wear to the office. This one is completely invisible under my blouse, I forget it's there, and by the end of the day my waist looks genuinely different. I've ordered two more.\", attribution \"— Daniela R., verified buyer\" in italic T-Star Pro. Below card: \"As Featured In\" in small uppercase tracked taupe text followed by five grayscale press publication logos. SKIMS logo bottom right. 4:5 aspect ratio.",
+      "aspect_ratio": "4:5",
+      "needs_product_images": true,
+      "notes": "Review speaks to the office/all-day wear use case — the biggest objection to waist trainers. Replace with a verified real customer quote before final production."
+    },
+    {
+      "template_number": 7,
+      "template_name": "us-vs-them",
+      "prompt": "SKIMS brand aesthetic: premium minimalist shapewear and loungewear brand. Warm taupe (#62554a) and soft neutral palette (#e4c9af, #efdfd0, cream whites). Custom rounded bubble-style wordmark for any logo elements; T-Star Pro-style clean technical sans-serif for body copy. Warm, flattering studio lighting, natural-yet-polished color grade, generous negative space. Diverse, inclusive, body-positive casting. Quiet luxury energy — confident, understated, never loud. Packaging in matte neutral tones with embossed logo detailing. Use the attached images as brand reference. Create: a side-by-side comparison ad divided vertically. Left half: muted gray-blue (#8A9BA8) background. Right half: warm taupe (#62554a) background. Center top: white circle with \"VS\" in bold taupe rounded type. Left header: \"Other Waist Trainers\" in small white sans-serif above a generic bulky black waist trainer — stiff and uncomfortable-looking. Below: vertical list with red X marks in white T-Star Pro type — \"Visible under clothing\" / \"Hot and uncomfortable to wear\" / \"One-size, no adjustability\" / \"Stiff and restricting\" / \"Only in black or nude\". Right header: \"SKIMS\" in rounded bubble-style bold white wordmark above the ivory waist trainer — smooth, seamless, ivory/cream — studio-lit with warm light. Below: vertical list with white checkmarks — \"Invisible under any outfit\" / \"Breathable, all-day comfort\" / \"Fully adjustable fit\" / \"Flexible, moves with you\" / \"Ivory — effortlessly discreet\". SKIMS logo bottom right in white. 4:5 aspect ratio.",
+      "aspect_ratio": "4:5",
+      "needs_product_images": true,
+      "notes": "Left side uses a generic, visually unappealing competitor product — no real brand shown. The visual quality contrast between sides IS the argument."
+    },
+    {
+      "template_number": 8,
+      "template_name": "before-after-ugc-native",
+      "prompt": "SKIMS brand aesthetic: premium minimalist shapewear and loungewear brand. Warm taupe (#62554a) and soft neutral palette (#e4c9af, #efdfd0, cream whites). Use product images for color reference ONLY — the ivory waist trainer should match the warm ivory/cream tone in the after panel. This should look like a real person's post. Create: a TikTok-style before-and-after split. LEFT panel: grainy iPhone mirror selfie of a woman in her late 20s to early 30s in a dimly lit bedroom, wearing a fitted dress, self-conscious posture — hands adjusting clothing, slight slouch. Warm but slightly dim lighting. White handwritten text overlay: \"Before\". RIGHT panel: same woman, same dress, same mirror — now standing tall with defined waist and confident posture, the ivory waist trainer subtly visible at the waistline through the dress fabric, warm bright morning light. White text overlay: \"After one week\". Top center text overlay in white: \"I was skeptical. I am not anymore. 🤍\" Left panel slightly cooler and desaturated; right panel warmer and more luminous. Should look authentically stitched together in CapCut — slight seam at center, text placed casually not designed. 9:16 aspect ratio.",
+      "aspect_ratio": "9:16",
+      "needs_product_images": false,
+      "notes": "UGC-native format — should feel completely organic. The waist trainer is subtly visible through the dress fabric in the after panel, not on display. The posture transformation IS the before/after."
+    },
+    {
+      "template_number": 9,
+      "template_name": "negative-marketing-bait-switch",
+      "prompt": "SKIMS brand aesthetic: premium minimalist shapewear and loungewear brand. Warm taupe (#62554a) and soft neutral palette (#e4c9af, #efdfd0, cream whites). Custom rounded bubble-style wordmark for any logo elements; T-Star Pro-style clean technical sans-serif for body copy. Warm, flattering studio lighting, natural-yet-polished color grade, generous negative space. Diverse, inclusive, body-positive casting. Quiet luxury energy — confident, understated, never loud. Packaging in matte neutral tones with embossed logo detailing. Use the attached images as brand reference. Create: a bait-and-switch review ad. Background is an extreme close-up of the ivory waist trainer — smooth seamless fabric texture in warm ivory/cream — slightly blurred and brightened to create a soft, luxurious depth. Center: white rounded-rectangle review card in Amazon review style with subtle drop shadow. Gray circular default user icon, bold name \"Sophie M.\", one gold star filled and four gray stars, orange \"Verified Purchase\" badge. Bold review text: \"Now I can't leave the house without it.\" in dark sans-serif. Below the card: large bold white rounded bubble-style uppercase text \"THE REVIEWS ARE IN.\" SKIMS logo bottom right in warm taupe. 4:5 aspect ratio.",
+      "aspect_ratio": "4:5",
+      "needs_product_images": true,
+      "notes": "The one-star with 'Now I can't leave the house without it.' is the bait — reads as a complaint before the brain resolves it as an obsessive compliment. Strong scroll-stop hook for paid social."
+    },
+    {
+      "template_number": 10,
+      "template_name": "press-editorial",
+      "prompt": "SKIMS brand aesthetic: premium minimalist shapewear and loungewear brand. Warm taupe (#62554a) and soft neutral palette (#e4c9af, #efdfd0, cream whites). Custom rounded bubble-style wordmark for any logo elements; T-Star Pro-style clean technical sans-serif for body copy. Warm, flattering studio lighting, natural-yet-polished color grade, generous negative space. Diverse, inclusive, body-positive casting. Quiet luxury energy — confident, understated, never loud. Packaging in matte neutral tones with embossed logo detailing. Use the attached images as brand reference. Create: a press authority ad on a soft off-white linen (#F5F0EA) textured background. Top: \"As Featured In\" in small warm taupe (#62554a) uppercase wide-tracked T-Star Pro text. Below: five grayscale publication wordmark logos in a horizontal row — Vogue, Marie Claire, Women's Health, Cosmopolitan, Harper's Bazaar. Center: italic T-Star Pro serif pull-quote in warm taupe (#62554a): \"The waist trainer you'll actually wear all day — invisible, effortless, and it genuinely works.\" with attribution in small regular weight below. Lower third: the ivory waist trainer shot at 85mm f/2.8, soft warm side light from the left, slight shadow to the right, product angled 15° toward viewer on the linen surface. SKIMS logo bottom left in warm taupe. Generous white space throughout. Full-page Vogue editorial energy. 4:5 aspect ratio.",
+      "aspect_ratio": "4:5",
+      "needs_product_images": true,
+      "notes": "Publication logos should be rendered clean grayscale — no color. The linen background adds warmth consistent with the SKIMS neutral palette while signaling editorial authority."
+    }
+  ]
+}
