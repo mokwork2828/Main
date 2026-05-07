@@ -21,7 +21,7 @@ from pathlib import Path
 import requests
 
 
-GEMINI_MODEL = "gemini-2.0-flash-preview-image-generation"
+GEMINI_MODEL = "gemini-3.1-flash-image-preview"
 GEMINI_URL   = (
     "https://generativelanguage.googleapis.com/v1beta/models/"
     f"{GEMINI_MODEL}:generateContent"
