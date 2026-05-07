@@ -2,6 +2,12 @@
   "brand": "Polène Paris (aesthetic reference)",
   "product": "estrogen — Bucket Bag",
   "generated_at": "2026-05-07T00:00:00Z",
+  "product_images_folder": "brands/bloated bucket removed bg",
+  "product_images": [
+    "brands/bloated bucket removed bg/IMG_8049.png",
+    "brands/bloated bucket removed bg/IMG_8059.png",
+    "brands/bloated bucket removed bg/IMG_8175.png"
+  ],
   "image_generation_prompt_modifier": "Shot in the visual language of Polène Paris: warm ivory cream background (#FAF8F5), soft side-directional natural daylight with held warm shadows, no harsh contrast. Subject rendered with generous negative space — 40-50% of frame. Color grade: muted, warm-toned, slightly desaturated with brown-black shadows. Surfaces: raw travertine, unpolished stone, or warm linen. Mood: quiet, still, Parisian. Typography if needed: Sackers Gothic all-caps widely tracked in deep charcoal (#1A1A1A), or Canela Light serif for editorial text. No logos on product surface. Sculptural, tactile, unhurried.",
   "prompts": [
     {
