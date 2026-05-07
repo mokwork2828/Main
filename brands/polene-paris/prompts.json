@@ -1,0 +1,99 @@
+{
+  "brand": "Polène Paris (aesthetic reference)",
+  "product": "estrogen — Bucket Bag",
+  "generated_at": "2026-05-07T00:00:00Z",
+  "product_images_folder": "brands/bloated bucket removed bg",
+  "product_images": [
+    "brands/bloated bucket removed bg/IMG_8043.png",
+    "brands/bloated bucket removed bg/IMG_8045.png",
+    "brands/bloated bucket removed bg/IMG_8049.png",
+    "brands/bloated bucket removed bg/IMG_8056.png",
+    "brands/bloated bucket removed bg/IMG_8057.png",
+    "brands/bloated bucket removed bg/IMG_8059.png",
+    "brands/bloated bucket removed bg/IMG_8175.png",
+    "brands/bloated bucket removed bg/IMG_8178.png"
+  ],
+  "image_generation_prompt_modifier": "Shot in the visual language of Polène Paris: warm ivory cream background (#FAF8F5), soft side-directional natural daylight with held warm shadows, no harsh contrast. Subject rendered with generous negative space — 40-50% of frame. Color grade: muted, warm-toned, slightly desaturated with brown-black shadows. Surfaces: raw travertine, unpolished stone, or warm linen. Mood: quiet, still, Parisian. Typography if needed: Sackers Gothic all-caps widely tracked in deep charcoal (#1A1A1A), or Canela Light serif for editorial text. No logos on product surface. Sculptural, tactile, unhurried.",
+  "prompts": [
+    {
+      "template_number": 1,
+      "template_name": "headline",
+      "prompt": "Shot in the visual language of Polène Paris: warm ivory cream background (#FAF8F5), soft side-directional natural daylight with held warm shadows, no harsh contrast. Subject rendered with generous negative space — 40-50% of frame. Color grade: muted, warm-toned, slightly desaturated with brown-black shadows. Surfaces: raw travertine, unpolished stone, or warm linen. Mood: quiet, still, Parisian. Typography if needed: Sackers Gothic all-caps widely tracked in deep charcoal (#1A1A1A), or Canela Light serif for editorial text. No logos on product surface. Sculptural, tactile, unhurried. Use the attached images as brand reference. Match the exact product colors, typography style, and brand tone precisely. Create: a static ad with a warm ivory cream (#FAF8F5) background. Top third: large Canela Light serif headline reading \"EVERYTHING YOU CARRY, BEAUTIFULLY.\". Below in smaller Sackers Gothic all-caps widely tracked text: \"The estrogen bucket bag. Italian calfskin. Hand-stitched.\". Bottom half: the estrogen bucket bag resting on a raw travertine surface, shot at 50mm f/2.8 from slightly above, soft side-directional light catching the leather grain and gathered top. ESTROGEN wordmark bottom right in deep charcoal (#1A1A1A) Sackers Gothic, widely tracked. Clean, authoritative. 4:5 aspect ratio.",
+      "aspect_ratio": "4:5",
+      "needs_product_images": true,
+      "notes": "Hero ad. Headline should feel elevated and unhurried — Canela Light at large scale with wide tracking. Product must fill lower half with generous negative space above."
+    },
+    {
+      "template_number": 2,
+      "template_name": "offer-promotion",
+      "prompt": "Shot in the visual language of Polène Paris: warm ivory cream background (#FAF8F5), soft side-directional natural daylight with held warm shadows, no harsh contrast. Subject rendered with generous negative space — 40-50% of frame. Color grade: muted, warm-toned, slightly desaturated with brown-black shadows. Surfaces: raw travertine, unpolished stone, or warm linen. Mood: quiet, still, Parisian. Typography if needed: Sackers Gothic all-caps widely tracked in deep charcoal (#1A1A1A), or Canela Light serif for editorial text. No logos on product surface. Sculptural, tactile, unhurried. Use the attached images as brand reference. Match exact brand colors and typography style. Create: a new-arrival announcement ad with a split background. Top 60% is deep charcoal (#1A1A1A) and bottom 40% is warm ivory cream (#FAF8F5). The estrogen bucket bag sits centered precisely where the two backgrounds meet, soft studio lighting with warm-toned shadows. Upper area: large warm ivory Canela Light serif reading \"NOW AVAILABLE.\". Below in smaller Sackers Gothic all-caps widely tracked: \"The Bucket — a new silhouette from estrogen.\". Lower section: small charcoal Sackers Gothic text \"Full-grain Italian calfskin · Made in limited quantities\". ESTROGEN wordmark bottom right in ivory Sackers Gothic. 9:16 aspect ratio.",
+      "aspect_ratio": "9:16",
+      "needs_product_images": true,
+      "notes": "Polène never runs discount ads — reframe as new arrival / scarcity announcement. The charcoal-ivory split is a dramatic but brand-consistent contrast. Product straddles the divide as the hero."
+    },
+    {
+      "template_number": 3,
+      "template_name": "testimonial",
+      "prompt": "Shot in the visual language of Polène Paris: warm ivory cream background (#FAF8F5), soft side-directional natural daylight with held warm shadows, no harsh contrast. Subject rendered with generous negative space — 40-50% of frame. Color grade: muted, warm-toned, slightly desaturated with brown-black shadows. Surfaces: raw travertine, unpolished stone, or warm linen. Mood: quiet, still, Parisian. Typography if needed: Sackers Gothic all-caps widely tracked in deep charcoal (#1A1A1A), or Canela Light serif for editorial text. No logos on product surface. Sculptural, tactile, unhurried. Use the attached images as brand reference. Create: a testimonial ad set in a spare Parisian apartment interior — warm natural light filtering through sheer linen curtains, unpolished stone windowsill, aged oak parquet visible at the edge of frame. The estrogen bucket bag rests on the windowsill, slightly out of focus in the background. Overlaid at center: large Canela Light italic serif text in white — \"THE BAG I REACH FOR EVERY SINGLE DAY.\". Below in smaller Cormorant Garamond Regular: \"The leather is extraordinary. Six months in and it only gets more beautiful. I didn't expect to love it this much. — Sophie M., Paris.\". Five filled deep charcoal stars. ESTROGEN wordmark bottom right in white Sackers Gothic all-caps widely tracked. Shot on 35mm f/2.0. 9:16 aspect ratio.",
+      "aspect_ratio": "9:16",
+      "needs_product_images": true,
+      "notes": "Product should be soft background element, not hero. The testimonial text carries the frame. Atmosphere is key — feels lived-in and Parisian, not staged."
+    },
+    {
+      "template_number": 4,
+      "template_name": "features-benefits-callout",
+      "prompt": "Shot in the visual language of Polène Paris: warm ivory cream background (#FAF8F5), soft side-directional natural daylight with held warm shadows, no harsh contrast. Subject rendered with generous negative space — 40-50% of frame. Color grade: muted, warm-toned, slightly desaturated with brown-black shadows. Surfaces: raw travertine, unpolished stone, or warm linen. Mood: quiet, still, Parisian. Typography if needed: Sackers Gothic all-caps widely tracked in deep charcoal (#1A1A1A), or Canela Light serif for editorial text. No logos on product surface. Sculptural, tactile, unhurried. Use the attached images as brand reference. Create: an educational diagram-style ad on warm ivory (#FAF8F5) background. Top: Canela Light serif headline in deep charcoal — \"WHAT MAKES THE ESTROGEN BUCKET DIFFERENT.\". Below: the estrogen bucket bag centered, lit with even diffused studio light that reveals leather texture and the gathered top detail. Four minimal callout lines — hairline weight in deep charcoal (#1A1A1A) — extending from the bag to four labels in Sackers Gothic all-caps widely tracked: \"FULL-GRAIN ITALIAN CALFSKIN\" (pointing to the body), \"HAND-STITCHED GATHERED TOP\" (pointing to the gathered opening), \"POLISHED MINIMAL HARDWARE\" (pointing to the hardware), \"STRUCTURED BASE, OPEN SILHOUETTE\" (pointing to the base). \"estrogen.com\" bottom center in small Sackers Gothic. ESTROGEN wordmark bottom right. Scientific luxury diagram energy. 4:5 aspect ratio.",
+      "aspect_ratio": "4:5",
+      "needs_product_images": true,
+      "notes": "Callout lines should be hairline-thin and editorial. Labels in Sackers Gothic all-caps, not bold — restrained and precise. No circles or decorative elements."
+    },
+    {
+      "template_number": 5,
+      "template_name": "bullet-points",
+      "prompt": "Shot in the visual language of Polène Paris: warm ivory cream background (#FAF8F5), soft side-directional natural daylight with held warm shadows, no harsh contrast. Subject rendered with generous negative space — 40-50% of frame. Color grade: muted, warm-toned, slightly desaturated with brown-black shadows. Surfaces: raw travertine, unpolished stone, or warm linen. Mood: quiet, still, Parisian. Typography if needed: Sackers Gothic all-caps widely tracked in deep charcoal (#1A1A1A), or Canela Light serif for editorial text. No logos on product surface. Sculptural, tactile, unhurried. Use the attached images as brand reference. Create: a benefit-list ad, split composition on warm ivory (#FAF8F5) background. Left 40%: the estrogen bucket bag on a folded warm linen surface, shot at 85mm f/2.8, soft side light. Right 60%: vertical stack of five lines, each preceded by a small filled deep charcoal (#1A1A1A) circle, all in Sackers Gothic all-caps with generous tracking: \"FULL-GRAIN ITALIAN CALFSKIN\" / \"HAND-STITCHED IN SPAIN\" / \"AGES BEAUTIFULLY WITH WEAR\" / \"GATHERED OPEN-TOP SILHOUETTE\" / \"ADJUSTABLE LEATHER SHOULDER STRAP\". Clean sans-serif, generous line spacing, unhurried. ESTROGEN wordmark bottom right in Sackers Gothic. 4:5 aspect ratio.",
+      "aspect_ratio": "4:5",
+      "needs_product_images": true,
+      "notes": "Right column should feel like a quiet luxury checklist — not a marketing bullet list. The filled circles should be small and minimal, not icon-heavy. Generous white space between lines."
+    },
+    {
+      "template_number": 6,
+      "template_name": "social-proof",
+      "prompt": "Shot in the visual language of Polène Paris: warm ivory cream background (#FAF8F5), soft side-directional natural daylight with held warm shadows, no harsh contrast. Subject rendered with generous negative space — 40-50% of frame. Color grade: muted, warm-toned, slightly desaturated with brown-black shadows. Surfaces: raw travertine, unpolished stone, or warm linen. Mood: quiet, still, Parisian. Typography if needed: Sackers Gothic all-caps widely tracked in deep charcoal (#1A1A1A), or Canela Light serif for editorial text. No logos on product surface. Sculptural, tactile, unhurried. Use the attached images as brand reference. Create: a social proof ad on warm ivory cream (#FAF8F5) background. Top: \"LOVED BY THOUSANDS\" in Sackers Gothic all-caps deep charcoal, widely tracked. Five filled deep charcoal stars with \"Rated 4.9 out of 5\" in Sackers Gothic. Center: the estrogen bucket bag at 50mm f/4, soft studio lighting. Below: a frosted white card with five-star rating, headline \"Worth every single cent\", review text in Cormorant Garamond Regular — \"I've carried designer bags for years. The estrogen bucket is the one I actually reach for every day. The leather is extraordinary — structured but soft, effortless but elevated. It develops a beautiful patina. Nothing else compares. — Camille D., verified buyer.\" Below card: \"As Featured In\" in small Sackers Gothic with five grayscale publication logos (Vogue, Elle, Who What Wear, Refinery29, Grazia). ESTROGEN wordmark bottom right. 4:5 aspect ratio.",
+      "aspect_ratio": "4:5",
+      "needs_product_images": true,
+      "notes": "The frosted review card should feel like a premium editorial insert, not a screenshot widget. Publication logos in light grayscale — not bold. The trust stack should feel earned, not shouted."
+    },
+    {
+      "template_number": 7,
+      "template_name": "us-vs-them",
+      "prompt": "Shot in the visual language of Polène Paris: warm ivory cream background (#FAF8F5), soft side-directional natural daylight with held warm shadows, no harsh contrast. Subject rendered with generous negative space — 40-50% of frame. Color grade: muted, warm-toned, slightly desaturated with brown-black shadows. Surfaces: raw travertine, unpolished stone, or warm linen. Mood: quiet, still, Parisian. Typography if needed: Sackers Gothic all-caps widely tracked in deep charcoal (#1A1A1A), or Canela Light serif for editorial text. No logos on product surface. Sculptural, tactile, unhurried. Use the attached images as brand reference. Create: a side-by-side comparison ad divided vertically. Left: muted warm grey (#8C8480) background. Right: warm ivory (#FAF8F5) background. Center top: a white circle with \"VS\" in Canela Light serif. Left header: \"MASS MARKET BAGS\" in Sackers Gothic all-caps charcoal + a generic unbranded bucket bag shape in grey + five lines with fine X marks in charcoal: \"Bonded or synthetic leather\" / \"Machine-made, no craft story\" / \"Logo-heavy exterior\" / \"Fades and peels within a year\" / \"No material traceability\". Right header: \"ESTROGEN\" in Sackers Gothic all-caps + the estrogen bucket bag + five lines with fine checkmarks in deep charcoal: \"Full-grain Italian calfskin\" / \"Hand-stitched by artisans in Spain\" / \"No exterior logo — silhouette is the signature\" / \"Develops rich patina over years\" / \"Certified European tanneries only\". ESTROGEN wordmark bottom right. 4:5 aspect ratio.",
+      "aspect_ratio": "4:5",
+      "needs_product_images": true,
+      "notes": "Keep the comparison restrained and factual — not aggressive. Polène's visual language is quiet confidence. The right side should feel like it needs no convincing. Avoid comic-style VS bursts — use a simple minimal circle instead."
+    },
+    {
+      "template_number": 8,
+      "template_name": "before-after-ugc-native",
+      "prompt": "Use the attached images as brand reference for product color ONLY. This should look like a real person's post. Create: a TikTok before-and-after split. LEFT: grainy iPhone mirror selfie of a woman in her late 20s in a dimly lit apartment hallway, slightly disheveled outfit, generic canvas tote bag slung over one shoulder, harsh overhead ceiling light, looking hurried. White handwritten text overlaid: \"Oct 2023 — leaving home in a rush\". RIGHT: same woman, same hallway, bright soft morning light from an off-frame window, effortlessly composed in a minimal off-duty Parisian outfit — cream linen trousers, oversized knit, the estrogen bucket bag resting naturally on her forearm, relaxed and unhurried. White text overlaid: \"Apr 2024 — the bag that slowed me down\". Top center handwritten text: \"6 MONTHS WITH ESTROGEN 🤍\". Should look naturally stitched in CapCut — not a polished ad. 9:16 aspect ratio.",
+      "aspect_ratio": "9:16",
+      "needs_product_images": false,
+      "notes": "UGC-native format — intentionally looks unpolished. Product visible in RIGHT frame only. The emotional shift is the story: chaotic/rushed to calm/considered. No Polène modifier prepended — UGC style overrides editorial polish."
+    },
+    {
+      "template_number": 9,
+      "template_name": "negative-marketing-bait-switch",
+      "prompt": "Shot in the visual language of Polène Paris: warm ivory cream background (#FAF8F5), soft side-directional natural daylight with held warm shadows, no harsh contrast. Subject rendered with generous negative space — 40-50% of frame. Color grade: muted, warm-toned, slightly desaturated with brown-black shadows. Surfaces: raw travertine, unpolished stone, or warm linen. Mood: quiet, still, Parisian. Typography if needed: Sackers Gothic all-caps widely tracked in deep charcoal (#1A1A1A), or Canela Light serif for editorial text. No logos on product surface. Sculptural, tactile, unhurried. Use the attached images as brand reference. Create: a bait-and-switch review ad. Background is an extreme close-up of the estrogen bucket bag — the gathered leather top in full frame, slightly blurred, warm camel calfskin grain visible in soft side light, hand-stitching detail just visible at the seam. Center: a white rounded-rectangle review card, Amazon-style with subtle shadow. Gray user icon, bold name \"Clara V.\", one gold star + four gray unfilled stars, orange \"Verified Purchase\" badge, bold dark sans-serif review headline: \"Ruined my other bags for me.\". No body text — the headline lands alone. Bottom: bold white Canela Light serif text — \"THE REVIEWS ARE IN.\". ESTROGEN wordmark bottom right in white Sackers Gothic all-caps. 4:5 aspect ratio.",
+      "aspect_ratio": "4:5",
+      "needs_product_images": true,
+      "notes": "The one-star review is the scroll stopper. The headline 'Ruined my other bags for me' is the bait — reads negative at a glance, is clearly a rave on second read. Keep the background close-up sensuous and tactile — leather grain should feel almost touchable."
+    },
+    {
+      "template_number": 10,
+      "template_name": "press-editorial",
+      "prompt": "Shot in the visual language of Polène Paris: warm ivory cream background (#FAF8F5), soft side-directional natural daylight with held warm shadows, no harsh contrast. Subject rendered with generous negative space — 40-50% of frame. Color grade: muted, warm-toned, slightly desaturated with brown-black shadows. Surfaces: raw travertine, unpolished stone, or warm linen. Mood: quiet, still, Parisian. Typography if needed: Sackers Gothic all-caps widely tracked in deep charcoal (#1A1A1A), or Canela Light serif for editorial text. No logos on product surface. Sculptural, tactile, unhurried. Use the attached images as brand reference. Create: a full-page press ad on warm off-white linen texture (#FAF8F5) background. Top: \"AS FEATURED IN\" in very small Sackers Gothic all-caps deep charcoal, extremely wide-tracked, centered. Below: five grayscale publication logos arranged horizontally with generous spacing: Vogue, Elle, The Times, Who What Wear, Grazia — all muted, low-contrast, refined. Center: a Canela Light italic serif pull-quote in deep charcoal (#1A1A1A), large and generous — \"The bucket bag that makes you look like you've always had great taste.\" — attribution below in smaller Sackers Gothic: \"— Vogue\". Lower third: the estrogen bucket bag photographed at 85mm f/2.8 on unpolished white marble, soft side-directional light, rich leather grain visible. ESTROGEN wordmark bottom left in Sackers Gothic all-caps. Generous negative space throughout. Full-page Vogue back-cover energy — authoritative, unhurried, inevitable. 4:5 aspect ratio.",
+      "aspect_ratio": "4:5",
+      "needs_product_images": true,
+      "notes": "This is the authority play. Publication logos should be faint and elegant — not prominent. The pull-quote does all the work. Product sits in the lower third, confident and unhurried. The Canela Light serif at large scale is essential to the Polène editorial feel."
+    }
+  ]
+}
