@@ -1,36 +1,41 @@
 #!/usr/bin/env python3
 """
-generate-ad.py — Ad image generation via GPT Image 2 on FAL.
+generate-ad.py — Ad image generation via Google Gemini API.
 
 Usage (run from project root):
-  python3 skills/generate-ad.py brands/[brand]/ads/[output-folder]
+  python3 scripts/generate-ad.py brands/[brand]/ads/[output-folder]
 
 Reads ad-spec.json from the output folder.
-Uploads the product image and generates via GPT Image 2.
+Optionally uses a product image as reference input.
 Output: [product-slug]-v1.png (auto-increments if file already exists)
 
-Requires FAL_KEY in .env at the project root.
+Requires GOOGLE_API_KEY in .env at the project root.
 """
 
+import base64
 import json
 import os
 import sys
 from pathlib import Path
 
-import fal_client
 import requests
 
 
-EDIT_MODEL    = "openai/gpt-image-2/edit"
-TXT2IMG_MODEL = "openai/gpt-image-2"
+GEMINI_MODEL = "gemini-2.0-flash-preview-image-generation"
+GEMINI_URL   = (
+    "https://generativelanguage.googleapis.com/v1beta/models/"
+    f"{GEMINI_MODEL}:generateContent"
+)
+
+MIME_MAP = {".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".png": "image/png", ".webp": "image/webp"}
 
 
 # ---------------------------------------------------------------------------
-# Load FAL key from .env
+# Load API key from .env
 # ---------------------------------------------------------------------------
 
 def _load_env() -> None:
-    if os.environ.get("FAL_KEY"):
+    if os.environ.get("GOOGLE_API_KEY"):
         return
     search = Path.cwd()
     for _ in range(5):
@@ -55,31 +60,24 @@ def _load_env() -> None:
 _load_env()
 
 
-def _check_key() -> None:
-    key = os.environ.get("FAL_KEY", "")
+def _check_key() -> str:
+    key = os.environ.get("GOOGLE_API_KEY", "")
     if not key:
         sys.exit(
-            "Error: FAL_KEY not found.\n"
-            "Add FAL_KEY=your_key to a .env file at the project root."
+            "Error: GOOGLE_API_KEY not found.\n"
+            "Add GOOGLE_API_KEY=your_key to a .env file at the project root."
         )
-    os.environ["FAL_KEY"] = key
+    return key
 
 
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
 
-def _upload(path: Path, label: str) -> str:
-    print(f"  Uploading {label}...", end=" ", flush=True)
-    url = fal_client.upload_file(str(path))
-    print("done")
-    return url
-
-
-def _save(url: str, dest: Path) -> None:
-    resp = requests.get(url, timeout=120)
-    resp.raise_for_status()
-    dest.write_bytes(resp.content)
+def _encode_image(path: Path) -> dict:
+    mime = MIME_MAP.get(path.suffix.lower(), "image/jpeg")
+    data = base64.b64encode(path.read_bytes()).decode()
+    return {"inline_data": {"mime_type": mime, "data": data}}
 
 
 def _next_version(folder: Path, slug: str) -> Path:
@@ -96,7 +94,7 @@ def _next_version(folder: Path, slug: str) -> Path:
 def main() -> None:
     if len(sys.argv) < 2:
         sys.exit(
-            "Usage: python3 skills/generate-ad.py "
+            "Usage: python3 scripts/generate-ad.py "
             "brands/[brand]/ads/[output-folder]"
         )
 
@@ -117,40 +115,49 @@ def main() -> None:
     if not prompt:
         sys.exit("Error: No prompt found in ad-spec.json.")
 
-    _check_key()
+    api_key = _check_key()
 
     print(f"\nGenerating ad — {brand} / {product}")
+    print(f"Model: {GEMINI_MODEL}")
 
-    image_urls = []
+    parts = [{"text": prompt}]
 
     if product_image:
         img_path = Path(product_image)
         if not img_path.exists():
             sys.exit(f"Error: Product image not found: {img_path}")
-        image_urls.append(_upload(img_path, img_path.name))
+        print(f"  Reference image: {img_path.name}")
+        parts.append(_encode_image(img_path))
 
-    model = EDIT_MODEL if image_urls else TXT2IMG_MODEL
-    print(f"Model: {model}")
+    body = {
+        "contents": [{"parts": parts}],
+        "generationConfig": {"responseModalities": ["IMAGE", "TEXT"]},
+    }
+
     print("Generating...")
-
-    result = fal_client.run(
-        model,
-        arguments={
-            "prompt":      prompt,
-            "image_size":  {"width": 1024, "height": 1792},
-            "num_images":  1,
-            "quality":     "high",
-            **({"image_urls": image_urls} if image_urls else {}),
-        },
+    resp = requests.post(
+        f"{GEMINI_URL}?key={api_key}",
+        json=body,
+        timeout=180,
     )
 
-    images = result.get("images", [])
-    if not images or not images[0].get("url"):
-        sys.exit("Error: No image returned from FAL.")
+    if not resp.ok:
+        sys.exit(f"Error from Google API ({resp.status_code}):\n{resp.text}")
+
+    result = resp.json()
+
+    image_b64 = None
+    for part in result.get("candidates", [{}])[0].get("content", {}).get("parts", []):
+        if "inlineData" in part:
+            image_b64 = part["inlineData"]["data"]
+            break
+
+    if not image_b64:
+        sys.exit(f"Error: No image in response.\n{json.dumps(result, indent=2)}")
 
     slug     = product.lower().replace(" ", "-")
     out_path = _next_version(output_dir, slug)
-    _save(images[0]["url"], out_path)
+    out_path.write_bytes(base64.b64decode(image_b64))
 
     print(f"\nSaved → {out_path}")
 
