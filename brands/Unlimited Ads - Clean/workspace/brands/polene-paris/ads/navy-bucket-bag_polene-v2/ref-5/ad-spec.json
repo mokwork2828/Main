@@ -2,7 +2,14 @@
   "brand": "Estrogen",
   "product": "Navy Bucket Bag",
   "reference_style": "Full-length model, open landscape, soft diffused light",
-  "product_image": "brands/Unlimited Ads - Clean/workspace/brands/polene-paris/product-images/IMG_8043.png",
+  "product_images": [
+    "brands/Unlimited Ads - Clean/workspace/brands/polene-paris/product-images/IMG_8043.png",
+    "brands/Unlimited Ads - Clean/workspace/brands/polene-paris/product-images/IMG_8045.png",
+    "brands/Unlimited Ads - Clean/workspace/brands/polene-paris/product-images/IMG_8049.png",
+    "brands/Unlimited Ads - Clean/workspace/brands/polene-paris/product-images/IMG_8056.png",
+    "brands/Unlimited Ads - Clean/workspace/brands/polene-paris/product-images/IMG_8057.png",
+    "brands/Unlimited Ads - Clean/workspace/brands/polene-paris/product-images/IMG_8059.png"
+  ],
   "reference_image": "brands/Unlimited Ads - Clean/workspace/brands/polene-paris/references/ref pics/662829221_18519626560079885_5383193623410955133_n.jpg",
   "prompt": "Match the scene composition and lighting from the reference photo. Full-length figure in open landscape, soft overcast light, warm earth tones below, pale sky above. Calm, unhurried mood. No text."
 }

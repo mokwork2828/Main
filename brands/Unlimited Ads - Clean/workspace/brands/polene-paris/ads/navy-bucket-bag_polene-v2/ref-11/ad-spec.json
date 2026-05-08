@@ -2,7 +2,14 @@
   "brand": "Estrogen",
   "product": "Navy Bucket Bag",
   "reference_style": "Two figures at reflective water's edge, pale cool palette",
-  "product_image": "brands/Unlimited Ads - Clean/workspace/brands/polene-paris/product-images/IMG_8043.png",
+  "product_images": [
+    "brands/Unlimited Ads - Clean/workspace/brands/polene-paris/product-images/IMG_8043.png",
+    "brands/Unlimited Ads - Clean/workspace/brands/polene-paris/product-images/IMG_8045.png",
+    "brands/Unlimited Ads - Clean/workspace/brands/polene-paris/product-images/IMG_8049.png",
+    "brands/Unlimited Ads - Clean/workspace/brands/polene-paris/product-images/IMG_8056.png",
+    "brands/Unlimited Ads - Clean/workspace/brands/polene-paris/product-images/IMG_8057.png",
+    "brands/Unlimited Ads - Clean/workspace/brands/polene-paris/product-images/IMG_8059.png"
+  ],
   "reference_image": "brands/Unlimited Ads - Clean/workspace/brands/polene-paris/references/ref pics/682689753_18523040683079885_116634649504770440_n.jpg",
   "prompt": "Match the scene composition and lighting from the reference photo. Two figures at calm water's edge, reflective surface, soft overcast light, pale and cool muted palette, serene lakeside or coastal setting. No text."
 }

@@ -110,10 +110,14 @@ def main() -> None:
         spec = json.load(f)
 
     prompt          = spec.get("prompt", "").strip()
-    product_image   = spec.get("product_image", "")
     reference_image = spec.get("reference_image", "")
     brand           = spec.get("brand", "brand")
     product         = spec.get("product", "product")
+
+    # Support both product_images (array) and product_image (single, legacy)
+    product_images = spec.get("product_images") or []
+    if not product_images and spec.get("product_image"):
+        product_images = [spec["product_image"]]
 
     if not prompt:
         sys.exit("Error: No prompt found in ad-spec.json.")
@@ -125,18 +129,26 @@ def main() -> None:
 
     parts = []
 
-    if product_image and reference_image:
+    # Build instruction based on what inputs are provided
+    n = len(product_images)
+    if n > 0 and reference_image:
         parts.append({"text": (
-            "Create a product advertisement. "
-            "The first image is the product — reproduce it exactly as shown: same bag, same hardware, same strap, same leather texture and color. "
-            "The second image is a scene reference — match its composition, lighting, environment, and mood. "
-            "Do not reproduce the bag from the second image. Use only the bag from the first image."
+            f"Create a product advertisement. "
+            f"The first {n} image{'s are' if n > 1 else ' is'} different angles of the same product — "
+            f"together they show the complete bag: its silhouette, strap, hardware, leather texture, and color. "
+            f"Reproduce this exact product faithfully. "
+            f"The last image is a scene reference — match its composition, lighting, environment, and mood exactly. "
+            f"Do not use the bag from the scene reference. Use only the bag from the product images."
         )})
-    elif product_image:
-        parts.append({"text": "Create a product advertisement featuring the bag shown in the image exactly as it appears."})
+    elif n > 0:
+        parts.append({"text": (
+            f"Create a product advertisement. "
+            f"The {n} image{'s are' if n > 1 else ' is'} different angles of the same product. "
+            f"Reproduce the bag exactly as shown."
+        )})
 
-    if product_image:
-        img_path = Path(product_image)
+    for img in product_images:
+        img_path = Path(img)
         if not img_path.exists():
             sys.exit(f"Error: Product image not found: {img_path}")
         print(f"  Product image:   {img_path.name}")

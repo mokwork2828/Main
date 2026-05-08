@@ -2,7 +2,14 @@
   "brand": "Estrogen",
   "product": "Navy Bucket Bag",
   "reference_style": "Clean architectural composition, blue sky, arid landscape",
-  "product_image": "brands/Unlimited Ads - Clean/workspace/brands/polene-paris/product-images/IMG_8043.png",
+  "product_images": [
+    "brands/Unlimited Ads - Clean/workspace/brands/polene-paris/product-images/IMG_8043.png",
+    "brands/Unlimited Ads - Clean/workspace/brands/polene-paris/product-images/IMG_8045.png",
+    "brands/Unlimited Ads - Clean/workspace/brands/polene-paris/product-images/IMG_8049.png",
+    "brands/Unlimited Ads - Clean/workspace/brands/polene-paris/product-images/IMG_8056.png",
+    "brands/Unlimited Ads - Clean/workspace/brands/polene-paris/product-images/IMG_8057.png",
+    "brands/Unlimited Ads - Clean/workspace/brands/polene-paris/product-images/IMG_8059.png"
+  ],
   "reference_image": "brands/Unlimited Ads - Clean/workspace/brands/polene-paris/references/ref pics/670814785_18520498033079885_3867892657689582026_n.jpg",
   "prompt": "Match the scene composition and lighting from the reference photo. Clear blue sky, arid warm landscape, bright even sunlight, clean architectural composition, strong color separation between sky and earth. No text."
 }

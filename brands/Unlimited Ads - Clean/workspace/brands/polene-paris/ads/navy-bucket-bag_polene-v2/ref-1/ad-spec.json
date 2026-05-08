@@ -2,7 +2,14 @@
   "brand": "Estrogen",
   "product": "Navy Bucket Bag",
   "reference_style": "Model on beach, overcast sky, cool minimalist profile",
-  "product_image": "brands/Unlimited Ads - Clean/workspace/brands/polene-paris/product-images/IMG_8043.png",
+  "product_images": [
+    "brands/Unlimited Ads - Clean/workspace/brands/polene-paris/product-images/IMG_8043.png",
+    "brands/Unlimited Ads - Clean/workspace/brands/polene-paris/product-images/IMG_8045.png",
+    "brands/Unlimited Ads - Clean/workspace/brands/polene-paris/product-images/IMG_8049.png",
+    "brands/Unlimited Ads - Clean/workspace/brands/polene-paris/product-images/IMG_8056.png",
+    "brands/Unlimited Ads - Clean/workspace/brands/polene-paris/product-images/IMG_8057.png",
+    "brands/Unlimited Ads - Clean/workspace/brands/polene-paris/product-images/IMG_8059.png"
+  ],
   "reference_image": "brands/Unlimited Ads - Clean/workspace/brands/polene-paris/references/ref pics/656661783_18517252525079885_2500685515708763027_n.jpg",
   "prompt": "Match the scene composition and lighting from the reference photo. Cool overcast beach setting, neutral sand and pale sky. Soft diffused light, no harsh shadows. Minimalist palette. No text."
 }
