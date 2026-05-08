@@ -133,18 +133,21 @@ def main() -> None:
     n = len(product_images)
     if n > 0 and reference_image:
         parts.append({"text": (
-            f"Create a product advertisement. "
-            f"The first {n} image{'s are' if n > 1 else ' is'} different angles of the same product — "
-            f"together they show the complete bag: its silhouette, strap, hardware, leather texture, and color. "
-            f"Reproduce this exact product faithfully. "
-            f"The last image is a scene reference — match its composition, lighting, environment, and mood exactly. "
-            f"Do not use the bag from the scene reference. Use only the bag from the product images."
+            f"Create an original product advertisement photograph. "
+            f"The first {n} image{'s are' if n > 1 else ' is'} different angles of the same bag — "
+            f"together they show its complete silhouette, strap, hardware, leather texture, and color. "
+            f"Reproduce this exact bag faithfully in the final image. "
+            f"The last image is a mood and lighting reference only — draw inspiration from its environment type, lighting quality, and atmosphere, but create an original composition. Do not copy or replicate the reference scene directly. "
+            f"Critical rules for realism: "
+            f"(1) Light the bag consistently with the scene — same light direction, color temperature, and shadow quality as the environment. The bag must feel physically present in the scene, not composited. "
+            f"(2) When a model carries the bag, the strap hangs at shoulder length — the bag opening sits at the bottom of the bust, the bottom of the bag at the top to mid-hip. The strap has natural tension from the bag's weight pulling it downward. The bag hangs with gravity, not floating or rigid. "
+            f"(3) If the model holds the bag by hand, the hand and arm respond naturally to the weight — slight downward pull, natural grip."
         )})
     elif n > 0:
         parts.append({"text": (
-            f"Create a product advertisement. "
-            f"The {n} image{'s are' if n > 1 else ' is'} different angles of the same product. "
-            f"Reproduce the bag exactly as shown."
+            f"Create an original product advertisement photograph. "
+            f"The {n} image{'s are' if n > 1 else ' is'} different angles of the same bag. "
+            f"Reproduce the bag exactly as shown, lit naturally within the scene."
         )})
 
     for img in product_images:
