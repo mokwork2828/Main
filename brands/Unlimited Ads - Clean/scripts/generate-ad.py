@@ -6,7 +6,9 @@ Usage (run from project root):
   python3 scripts/generate-ad.py brands/[brand]/ads/[output-folder]
 
 Reads ad-spec.json from the output folder.
-Optionally uses a product image as reference input.
+Supports two image inputs:
+  product_image   — what the bag looks like (required for accuracy)
+  reference_image — scene/composition/mood reference (optional, Polène etc.)
 Output: [product-slug]-v1.png (auto-increments if file already exists)
 
 Requires GOOGLE_API_KEY in .env at the project root.
@@ -107,10 +109,11 @@ def main() -> None:
     with open(spec_path) as f:
         spec = json.load(f)
 
-    prompt        = spec.get("prompt", "").strip()
-    product_image = spec.get("product_image", "")
-    brand         = spec.get("brand", "brand")
-    product       = spec.get("product", "product")
+    prompt          = spec.get("prompt", "").strip()
+    product_image   = spec.get("product_image", "")
+    reference_image = spec.get("reference_image", "")
+    brand           = spec.get("brand", "brand")
+    product         = spec.get("product", "product")
 
     if not prompt:
         sys.exit("Error: No prompt found in ad-spec.json.")
@@ -120,14 +123,33 @@ def main() -> None:
     print(f"\nGenerating ad — {brand} / {product}")
     print(f"Model: {GEMINI_MODEL}")
 
-    parts = [{"text": prompt}]
+    parts = []
+
+    if product_image and reference_image:
+        parts.append({"text": (
+            "Create a product advertisement. "
+            "The first image is the product — reproduce it exactly as shown: same bag, same hardware, same strap, same leather texture and color. "
+            "The second image is a scene reference — match its composition, lighting, environment, and mood. "
+            "Do not reproduce the bag from the second image. Use only the bag from the first image."
+        )})
+    elif product_image:
+        parts.append({"text": "Create a product advertisement featuring the bag shown in the image exactly as it appears."})
 
     if product_image:
         img_path = Path(product_image)
         if not img_path.exists():
             sys.exit(f"Error: Product image not found: {img_path}")
-        print(f"  Reference image: {img_path.name}")
+        print(f"  Product image:   {img_path.name}")
         parts.append(_encode_image(img_path))
+
+    if reference_image:
+        ref_path = Path(reference_image)
+        if not ref_path.exists():
+            sys.exit(f"Error: Reference image not found: {ref_path}")
+        print(f"  Scene reference: {ref_path.name}")
+        parts.append(_encode_image(ref_path))
+
+    parts.append({"text": prompt})
 
     body = {
         "contents": [{"parts": parts}],
