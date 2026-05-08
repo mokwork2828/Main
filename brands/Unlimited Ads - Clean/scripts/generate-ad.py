@@ -146,8 +146,11 @@ def main() -> None:
     elif n > 0:
         parts.append({"text": (
             f"Create an original product advertisement photograph. "
-            f"The {n} image{'s are' if n > 1 else ' is'} different angles of the same bag. "
-            f"Reproduce the bag exactly as shown, lit naturally within the scene."
+            f"The {n} image{'s are' if n > 1 else ' is'} different angles of the same bag — "
+            f"together they show its complete silhouette, strap, hardware, leather texture, and color. "
+            f"Reproduce this exact bag faithfully in the scene described in the prompt. "
+            f"Light the bag consistently with the scene — same light direction, color temperature, and shadow quality. The bag must feel physically present, not composited. "
+            f"When the model carries the bag on the shoulder: strap at shoulder length, bag opening at bottom of bust, bottom of bag at top to mid-hip. Strap has natural tension from weight. Bag hangs with gravity."
         )})
 
     for img in product_images:
