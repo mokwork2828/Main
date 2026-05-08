@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Polène Paris — Navy Bucket Bag</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #f5f2ee; font-family: "Georgia", serif; color: #2a2218; }
+
+  header {
+    padding: 48px 40px 32px;
+    border-bottom: 1px solid #d9d3ca;
+  }
+  header h1 { font-size: 22px; font-weight: normal; letter-spacing: 0.08em; text-transform: uppercase; }
+  header p { margin-top: 6px; font-size: 13px; color: #7a6e62; letter-spacing: 0.04em; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2px;
+    padding: 2px;
+  }
+
+  .card {
+    position: relative;
+    background: #fff;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  .card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    transition: opacity 0.2s;
+  }
+  .card:hover img { opacity: 0.88; }
+  .card .label {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 10px 14px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.45));
+    color: #fff;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .card:hover .label { opacity: 1; }
+  .card .ref-num {
+    position: absolute;
+    top: 12px; left: 14px;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.75);
+    text-transform: uppercase;
+  }
+
+  /* Lightbox */
+  #lb {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(20,16,12,0.92);
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  #lb.open { display: flex; }
+  #lb img {
+    max-height: 82vh;
+    max-width: 88vw;
+    object-fit: contain;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  #lb .lb-meta {
+    margin-top: 18px;
+    text-align: center;
+    color: rgba(255,255,255,0.55);
+    font-size: 12px;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+  }
+  #lb .lb-meta strong { color: rgba(255,255,255,0.85); }
+
+  #lb-prev, #lb-next {
+    position: fixed;
+    top: 50%; transform: translateY(-50%);
+    background: none; border: none;
+    color: rgba(255,255,255,0.5);
+    font-size: 28px;
+    cursor: pointer;
+    padding: 20px;
+    transition: color 0.15s;
+    user-select: none;
+  }
+  #lb-prev:hover, #lb-next:hover { color: #fff; }
+  #lb-prev { left: 16px; }
+  #lb-next { right: 16px; }
+  #lb-close {
+    position: fixed;
+    top: 20px; right: 24px;
+    background: none; border: none;
+    color: rgba(255,255,255,0.5);
+    font-size: 22px;
+    cursor: pointer;
+    transition: color 0.15s;
+  }
+  #lb-close:hover { color: #fff; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Polène Paris &mdash; Navy Bucket Bag</h1>
+  <p>13 compositions &nbsp;·&nbsp; Polène visual DNA &nbsp;·&nbsp; Gemini image generation</p>
+</header>
+
+<div class="grid">
+  <div class="card" onclick="open_lb(0)">
+    <img src="ref-1/navy-bucket-bag-v1.png" alt="ref-1">
+    <span class="ref-num">01</span>
+    <div class="label">Pure product — warm ivory studio</div>
+  </div>
+  <div class="card" onclick="open_lb(1)">
+    <img src="ref-2/navy-bucket-bag-v1.png" alt="ref-2">
+    <span class="ref-num">02</span>
+    <div class="label">Product on raw plaster surface</div>
+  </div>
+  <div class="card" onclick="open_lb(2)">
+    <img src="ref-3/navy-bucket-bag-v1.png" alt="ref-3">
+    <span class="ref-num">03</span>
+    <div class="label">Product in natural window light</div>
+  </div>
+  <div class="card" onclick="open_lb(3)">
+    <img src="ref-4/navy-bucket-bag-v1.png" alt="ref-4">
+    <span class="ref-num">04</span>
+    <div class="label">Flat lay on linen or stone</div>
+  </div>
+  <div class="card" onclick="open_lb(4)">
+    <img src="ref-5/navy-bucket-bag-v1.png" alt="ref-5">
+    <span class="ref-num">05</span>
+    <div class="label">Product on marble or stone surface</div>
+  </div>
+  <div class="card" onclick="open_lb(5)">
+    <img src="ref-6/navy-bucket-bag-v1.png" alt="ref-6">
+    <span class="ref-num">06</span>
+    <div class="label">Macro leather texture close-up</div>
+  </div>
+  <div class="card" onclick="open_lb(6)">
+    <img src="ref-7/navy-bucket-bag-v1.png" alt="ref-7">
+    <span class="ref-num">07</span>
+    <div class="label">Gold clasp hardware close-up</div>
+  </div>
+  <div class="card" onclick="open_lb(7)">
+    <img src="ref-8/navy-bucket-bag-v1.png" alt="ref-8">
+    <span class="ref-num">08</span>
+    <div class="label">Product against architectural wall</div>
+  </div>
+  <div class="card" onclick="open_lb(8)">
+    <img src="ref-9/navy-bucket-bag-v1.png" alt="ref-9">
+    <span class="ref-num">09</span>
+    <div class="label">Minimal model — plaster wall</div>
+  </div>
+  <div class="card" onclick="open_lb(9)">
+    <img src="ref-10/navy-bucket-bag-v1.png" alt="ref-10">
+    <span class="ref-num">10</span>
+    <div class="label">Model — bag on shoulder, side profile</div>
+  </div>
+  <div class="card" onclick="open_lb(10)">
+    <img src="ref-11/navy-bucket-bag-v1.png" alt="ref-11">
+    <span class="ref-num">11</span>
+    <div class="label">Product on outdoor stone steps</div>
+  </div>
+  <div class="card" onclick="open_lb(11)">
+    <img src="ref-12/navy-bucket-bag-v1.png" alt="ref-12">
+    <span class="ref-num">12</span>
+    <div class="label">Model — full body, minimal interior</div>
+  </div>
+  <div class="card" onclick="open_lb(12)">
+    <img src="ref-13/navy-bucket-bag-v1.png" alt="ref-13">
+    <span class="ref-num">13</span>
+    <div class="label">Product with soft shadow study</div>
+  </div>
+</div>
+
+<div id="lb">
+  <button id="lb-close" onclick="close_lb()">&#x2715;</button>
+  <img id="lb-img" src="" alt="">
+  <div class="lb-meta">
+    <strong id="lb-title"></strong>
+    &nbsp;&nbsp;·&nbsp;&nbsp;
+    <span id="lb-counter"></span>
+  </div>
+  <button id="lb-prev" onclick="nav(-1)">&#8592;</button>
+  <button id="lb-next" onclick="nav(1)">&#8594;</button>
+</div>
+
+<script>
+const ads = [
+  { src: "ref-1/navy-bucket-bag-v1.png",  label: "Pure product — warm ivory studio" },
+  { src: "ref-2/navy-bucket-bag-v1.png",  label: "Product on raw plaster surface" },
+  { src: "ref-3/navy-bucket-bag-v1.png",  label: "Product in natural window light" },
+  { src: "ref-4/navy-bucket-bag-v1.png",  label: "Flat lay on linen or stone" },
+  { src: "ref-5/navy-bucket-bag-v1.png",  label: "Product on marble or stone surface" },
+  { src: "ref-6/navy-bucket-bag-v1.png",  label: "Macro leather texture close-up" },
+  { src: "ref-7/navy-bucket-bag-v1.png",  label: "Gold clasp hardware close-up" },
+  { src: "ref-8/navy-bucket-bag-v1.png",  label: "Product against architectural wall" },
+  { src: "ref-9/navy-bucket-bag-v1.png",  label: "Minimal model — plaster wall" },
+  { src: "ref-10/navy-bucket-bag-v1.png", label: "Model — bag on shoulder, side profile" },
+  { src: "ref-11/navy-bucket-bag-v1.png", label: "Product on outdoor stone steps" },
+  { src: "ref-12/navy-bucket-bag-v1.png", label: "Model — full body, minimal interior" },
+  { src: "ref-13/navy-bucket-bag-v1.png", label: "Product with soft shadow study" },
+];
+
+let cur = 0;
+const lb = document.getElementById("lb");
+const lbImg = document.getElementById("lb-img");
+const lbTitle = document.getElementById("lb-title");
+const lbCounter = document.getElementById("lb-counter");
+
+function open_lb(i) {
+  cur = i;
+  render();
+  lb.classList.add("open");
+}
+function close_lb() { lb.classList.remove("open"); }
+function nav(d) { cur = (cur + d + ads.length) % ads.length; render(); }
+function render() {
+  lbImg.src = ads[cur].src;
+  lbTitle.textContent = ads[cur].label;
+  lbCounter.textContent = `${cur + 1} / ${ads.length}`;
+}
+
+document.addEventListener("keydown", e => {
+  if (!lb.classList.contains("open")) return;
+  if (e.key === "ArrowLeft")  nav(-1);
+  if (e.key === "ArrowRight") nav(1);
+  if (e.key === "Escape")     close_lb();
+});
+lb.addEventListener("click", e => { if (e.target === lb) close_lb(); });
+</script>
+</body>
+</html>
