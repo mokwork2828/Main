@@ -1,4 +1,20 @@
 # Polène Paris — Visual Brief
+*Aesthetic reference for Estrogen brand campaigns*
+
+---
+
+## Product — Estrogen Navy Bucket Bag (exact details for generation)
+- **Brand**: Estrogen
+- **Silhouette**: Bucket tote — wide open top, tapers slightly to a structured flat base; soft pleats/flare where strap attaches at top rim
+- **Strap**: One single long flat slim shoulder strap with stitched edges; arches tall above the bag opening; no short grab handle
+- **Belt**: Thin flat leather wraparound belt sits at mid-body; small side tabs; centered at front with a small rectangular rose gold bar clasp engraved with the brand name
+- **Clasp**: Small rectangular rose gold hardware bar — NOT a twist-lock, NOT a buckle. Engraved bar style, flush and minimal
+- **Leather**: Saffiano — subtle fine crosshatch, not bold or heavy. Deep midnight navy blue
+- **Interior**: Navy fabric lining, gold D-ring hardware at top where strap attaches
+
+---
+
+## Aesthetic Reference — Polène Paris
 
 ## Brand Overview
 Polène is a Parisian leather goods brand founded in 2016 by siblings Elsa, Antoine, and Mathieu Mothay. Every bag is handcrafted in small batches in Ubrique, Spain using Spanish and Italian calfskin. Priced between $300–$450, the brand occupies a precise gap: genuine luxury quality without the conglomerate markup or logo signaling. Their customer is discerning, values craftsmanship over branding, and has likely grown disillusioned with traditional luxury houses.
